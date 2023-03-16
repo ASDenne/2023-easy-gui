@@ -9,7 +9,7 @@ def rolling(player):
     if rolls > 3:
         return 0
     largest_streak = 0
-    for n in range(1,6):
+    for n in range(1,7):
         streak = dice.count(n)
         if streak > largest_streak:
             largest_streak = streak
