@@ -2,10 +2,12 @@ import easygui, random
 def rolling(player):
     reroll = "reroll"
     rolls = 0
-    while reroll == "reroll":
+    while reroll == "reroll" and rolls < 3:
         rolls += 1
         dice = [random.randint(1,6),random.randint(1,6),random.randint(1,6),random.randint(1,6),random.randint(1,6)]
         reroll = easygui.buttonbox(f"on {player} dice roll {rolls} \n rolled {dice[0]} {dice[1]} {dice[2]} {dice[3]} {dice[4]}",choices=["reroll","stick"])
+    if reroll == "reroll":
+        return 0
     if rolls > 3:
         return 0
     largest_streak = 0
